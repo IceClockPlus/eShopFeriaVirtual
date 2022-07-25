@@ -1,9 +1,13 @@
-using eShopFeriaVirtual.Application.Services.Authentication;
+using eShopFeriaVirtual.Application;
+using eShopFeriaVirtual.Infrastructure;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddApplication()
+                .AddInfrastructure();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
