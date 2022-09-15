@@ -1,9 +1,11 @@
 using eShopFeriaVirtual.Application;
 using eShopFeriaVirtual.Infrastructure;
-
+using eShopFeriaVirtual.Infrastructure.Settings;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.Configure<MongoDatabaseSetting>(builder.Configuration.GetSection("MongoDatabaseSetting"));
 // Add services to the container.
 builder.Services.AddApplication()
                 .AddInfrastructure();
