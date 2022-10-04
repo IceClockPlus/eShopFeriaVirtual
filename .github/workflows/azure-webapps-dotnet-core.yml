@@ -43,6 +43,13 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
+          
+      - name: App Settings Variables Substitution
+        uses: microsoft/variable-substitution@1
+        with: 
+          files: '${{env.DOTNET_ROOT}}/myapp/appsettings.json'
+        env:
+          MongoDatabaseSetting.Connection: ${{secrets.MONGO_DATABASE_CONNECTION}}
       
       - name: Set up dependency caching for faster builds
         uses: actions/cache@v3
