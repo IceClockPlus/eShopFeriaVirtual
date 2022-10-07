@@ -15,7 +15,8 @@ namespace eShopFeriaVirtual.Api.Controllers
         {
             _mediator = mediator;
         }
-        
+
+        [ProducesResponseType(200)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(string id)
         {
