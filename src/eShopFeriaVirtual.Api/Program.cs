@@ -1,3 +1,4 @@
+using eShopFeriaVirtual.Api.Middlewares;
 using eShopFeriaVirtual.Application;
 using eShopFeriaVirtual.Infrastructure;
 using eShopFeriaVirtual.Infrastructure.Settings;
@@ -24,9 +25,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.MapControllers();
 
