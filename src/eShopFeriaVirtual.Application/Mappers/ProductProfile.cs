@@ -16,6 +16,7 @@ namespace eShopFeriaVirtual.Application.Mappers
         {
             #region Queries
             CreateMap<Product, ProductDTO>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(p => p.Name))
                 .ForMember(dest => dest.Price, opt => opt.MapFrom(p => p.Price));
             #endregion
