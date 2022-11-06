@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using eShopFeriaVirtual.Domain.Entities.Products;
-using eShopFeriaVirtual.Domain.DTO;
 using eShopFeriaVirtual.Application.Features.Products.Commands.CreateProduct;
+using eShopFeriaVirtual.Domain.DTO.Products;
 
 namespace eShopFeriaVirtual.Application.Mappers
 {
