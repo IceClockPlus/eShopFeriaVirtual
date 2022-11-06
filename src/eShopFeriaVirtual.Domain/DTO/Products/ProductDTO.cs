@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eShopFeriaVirtual.Domain.DTO
+namespace eShopFeriaVirtual.Domain.DTO.Products
 {
     public class ProductDTO
     {

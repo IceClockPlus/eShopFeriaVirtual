@@ -1,3 +1,4 @@
+using eShopFeriaVirtual.Api.Middlewares;
 using eShopFeriaVirtual.Application;
 using eShopFeriaVirtual.Infrastructure;
 using eShopFeriaVirtual.Infrastructure.Settings;
@@ -10,7 +11,7 @@ builder.Services.Configure<MongoDatabaseSetting>(builder.Configuration.GetSectio
 builder.Services.AddApplication()
                 .AddInfrastructure();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -24,9 +25,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.MapControllers();
 

@@ -1,4 +1,4 @@
-﻿using eShopFeriaVirtual.Domain.DTO;
+﻿using eShopFeriaVirtual.Domain.DTO.Products;
 using MediatR;
 using System;
 using System.Collections.Generic;

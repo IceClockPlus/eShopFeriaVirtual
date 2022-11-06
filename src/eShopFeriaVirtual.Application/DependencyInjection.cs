@@ -1,4 +1,6 @@
 ﻿using eShopFeriaVirtual.Application.Services.Authentication;
+using eShopFeriaVirtual.Application.Behavior;
+using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -17,6 +19,8 @@ namespace eShopFeriaVirtual.Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>)); 
             return services;
         }
     }

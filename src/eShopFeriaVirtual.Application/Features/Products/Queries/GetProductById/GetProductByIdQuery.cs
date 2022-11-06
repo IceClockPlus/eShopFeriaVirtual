@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using eShopFeriaVirtual.Domain.DTO;
+using eShopFeriaVirtual.Domain.DTO.Products;
 using eShopFeriaVirtual.Domain.Entities.Products;
 using eShopFeriaVirtual.Infrastructure.Database;
 using MediatR;
