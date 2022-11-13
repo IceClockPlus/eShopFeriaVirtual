@@ -2,6 +2,7 @@
 using eShopFeriaVirtual.Infrastructure.Database;
 using AutoMapper;
 using MediatR;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,8 @@ namespace eShopFeriaVirtual.Application.Features.Users.Authentication
             _context = context;
             _mapper = mapper;
         }
-        public Task<AuthenticationResponse> Handle(AuthenticateUserQuery request, CancellationToken cancellationToken)
-        {
+        public async Task<AuthenticationResponse> Handle(AuthenticateUserQuery request, CancellationToken cancellationToken)
+        {            
             throw new NotImplementedException();
         }
     }
