@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\eShopFeriaVirtual.Contracts\eShopFeriaVirtual.Contracts.csproj" />
     <ProjectReference Include="..\eShopFeriaVirtual.Domain\eShopFeriaVirtual.Domain.csproj" />
     <ProjectReference Include="..\eShopFeriaVirtual.Infrastructure\eShopFeriaVirtual.Infrastructure.csproj" />
   </ItemGroup>
