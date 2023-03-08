@@ -47,8 +47,13 @@ namespace eShopFeriaVirtual.Application.Features.Users
                 Salt = Convert.ToBase64String(bytesSalt)
             };
             await _context.UserCollection.InsertOneAsync(user);
-
-            throw new NotImplementedException();
+            RegisterUserResponseDto dto = new()
+            {
+                Email = user.Email,
+                Name = user.Name,
+                LastName = user.LastName
+            };
+            return new(dto);
         }
     }
 }
