@@ -35,5 +35,16 @@ namespace eShopFeriaVirtual.Api.Controllers
             return UnprocessableEntity(commandResult);
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("login")]
+        public async Task<ActionResult> Login(LoginRequest request)
+        {
+            LoginUserCommand loginUserCommand= new() { Email = request.Email, Password = request.Password };
+            var commandResult = await _mediator.Send(loginUserCommand);
+            if(commandResult is null) return Unauthorized();
+            return Ok(commandResult);
+        }
+
     }
 }
