@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using eShopFeriaVirtual.Contracts.Authentication;
 using eShopFeriaVirtual.Application.Services.Authentication;
+using MediatR;
 
 namespace eShopFeriaVirtual.Api.Controllers
 {
@@ -9,10 +10,12 @@ namespace eShopFeriaVirtual.Api.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
+        private readonly IMediator _mediator;
         private readonly IAuthenticationService _authenticationService;
-        public AuthenticationController(IAuthenticationService authenticationService)
+        public AuthenticationController(IAuthenticationService authenticationService, IMediator mediator)
         {
             _authenticationService = authenticationService;
+            _mediator = mediator;
         }
 
         [Route("register")]

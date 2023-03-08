@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using eShopFeriaVirtual.Application.Services;
 
 namespace eShopFeriaVirtual.Application
 {
@@ -18,6 +19,7 @@ namespace eShopFeriaVirtual.Application
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IPasswordHasherService, PasswordHasherService>();
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>)); 

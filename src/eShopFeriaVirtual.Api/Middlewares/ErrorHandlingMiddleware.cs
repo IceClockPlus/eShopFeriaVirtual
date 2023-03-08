@@ -40,7 +40,14 @@ namespace eShopFeriaVirtual.Api.Middlewares
                         response.StatusCode = (int)StatusCodes.Status500InternalServerError;
                         break;
                 }
-                var result = JsonSerializer.Serialize(responseModel);
+                
+                var serializerOptions = new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                    WriteIndented = true
+                };
+                
+                var result = JsonSerializer.Serialize(responseModel, serializerOptions);
                 await response.WriteAsync(result);
             }
         }

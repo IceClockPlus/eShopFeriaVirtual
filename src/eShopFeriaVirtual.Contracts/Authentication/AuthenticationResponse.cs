@@ -10,7 +10,6 @@ namespace eShopFeriaVirtual.Contracts.Authentication
     (
         string FirstName,
         string LastName,
-        string Email,
-        string Token
+        string Email
     );
 }
