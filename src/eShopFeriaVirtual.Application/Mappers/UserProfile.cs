@@ -14,7 +14,7 @@ namespace eShopFeriaVirtual.Application.Mappers
         public UserProfile()
         {
             CreateMap<User, AuthenticationResponse>()
-                .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.FirstName))
+                .ForMember(dest => dest.FirstName, opt => opt.MapFrom(src => src.Name))
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LastName))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email));
         }
